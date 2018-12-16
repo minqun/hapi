@@ -1,8 +1,8 @@
 //如果要查看API中的文档，还需要安装支持模板和静态内容服务的惰性和视觉插件
-const Inert = require('inert');
-const Vision = require('vision');
+const inert = require('inert');
+const vision = require('vision');
 
-const HapiSwagger = require('hapi-swagger');
+const hapiSwagger = require('hapi-swagger');
 const Pack = require('package');
 
 module.exports = [
