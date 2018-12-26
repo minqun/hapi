@@ -6,7 +6,6 @@ if (env.NODE_ENV === 'production') {
   } else {
     require('env2')('./.env.dev');
   }
-console.log(env.MYSQL_USERNAME, 'env.MYSQL_USERNAME');
 module.exports = {
 	"development": {
         "username": env.MYSQL_USERNAME,
