@@ -7,7 +7,7 @@ module.exports = [{
         path: `/${GROUP_NAME}`,
         handler: async (request, reply) => {
             // 通过 await 来异步查取数据
-            const { rows: results, count: totalCount }  = await models.shops.findAndCountAll({
+            const { rows: results, count: totalCount } = await models.shops.findAndCountAll({
                 // attributes: ['id', 'name'],
                 limit: request.query.limit,
                 offset: (request.query.page - 1) * request.query.limit,
@@ -20,6 +20,9 @@ module.exports = [{
             description: '获取店铺列表',
             auth: false,
             validate: {
+                headers: Joi.object({
+                    authorization: Joi.string().required(),
+                }).unknown(),
                 query: {
                     ...paginationDefine
                 }
@@ -31,7 +34,7 @@ module.exports = [{
         path: `/${GROUP_NAME}/{shopId}/goods`,
         handler: async (request, reply) => {
             // 通过 await 来异步查取数据
-            const { rows: results, count: totalCount }  = await models.goods.findAndCountAll({
+            const { rows: results, count: totalCount } = await models.goods.findAndCountAll({
                 // 基于 shop_id 的条件查询
                 where: {
                     shop_id: request.params.shopId,
