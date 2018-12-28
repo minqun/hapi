@@ -1,7 +1,7 @@
 const GROUP_NAME = 'shops';
 const Joi = require('joi');
 const models = require('../models/index');
-const { paginationDefine } = require('../utils/router-helper');
+const { paginationDefine, jwtHeaderDefine } = require('../utils/router-helper');
 module.exports = [{
         method: 'GET',
         path: `/${GROUP_NAME}`,
@@ -20,9 +20,7 @@ module.exports = [{
             description: '获取店铺列表',
             auth: false,
             validate: {
-                headers: Joi.object({
-                    authorization: Joi.string().required(),
-                }).unknown(),
+                ...jwtHeaderDefine,
                 query: {
                     ...paginationDefine
                 }
@@ -44,6 +42,7 @@ module.exports = [{
             reply({ results, totalCount });
         },
         config: {
+            auth: false,
             validate: {
                 params: {
                     shopId: Joi.string().required(),

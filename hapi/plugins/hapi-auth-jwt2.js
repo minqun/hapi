@@ -2,7 +2,7 @@ const config = require('../config');
 const validate = (decode, request, callback) => {
     let error;
     // decoded 为 JWT payload 被解码后的数据
-    const { userId } = decoded;
+    const { userId } = decode;
     if (!userId) {
         return callback(error, false, userId);
     }

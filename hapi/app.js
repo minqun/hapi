@@ -1,6 +1,5 @@
 // app.js
 const Hapi = require('hapi');
-require('env2')('./.env');
 const config = require('./config');
 const routesHelloHapi = require('./routes/hellow-world');
 const shops = require('./routes/shops');
