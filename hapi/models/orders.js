@@ -1,10 +1,9 @@
-module.exports = (Sequelize, DataTypes) => {
-    return  Sequelize.define('orders', {
+module.exports = (sequelize, DataTypes) => {
+    return  sequelize.define('orders', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,

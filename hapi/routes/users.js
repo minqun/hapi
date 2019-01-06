@@ -16,9 +16,14 @@ module.exports = [{
                 };
                 return JWT.sign(payload, process.env.JWT_SECRET);
             };
-            reply(generateJWT({ userId: 1 }))
+            reply(generateJWT({ userId: request.query.userId }))
         },
         config: {
+            validate: {
+                query: {
+                    userId: Joi.number().required().description('用户ID签名')
+                },
+            },
             tags: ['api', GROUP_NAME],
             description: '用于测试的用户 JWT 签发',
             auth: false, // 约定此接口不参与 JWT 的用户验证，会结合下面的 hapi-auth-jwt 来使用
@@ -50,8 +55,6 @@ module.exports = [{
             const user = await models.users.findOrCreate({
                 where: { open_id: openid },
             })
-            console.log(user)
-
             // decrypt 解码用户信息
             const userInfo = decryptData(encryptedData, iv, sessionKey, appid);
             // 更新 user 表中的用户的资料信息
@@ -70,7 +73,7 @@ module.exports = [{
                 }
                 return JWT.sign(payload, config.jwtSecret);
             }
-            reply(generateJWT({userid: user[0].id}))
+            reply(generateJWT({userId: user[0].id}))
         },
         config: {
             auth: false,

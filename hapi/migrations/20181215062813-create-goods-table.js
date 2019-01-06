@@ -19,6 +19,11 @@ module.exports = {
                 allowNull: false,
                 comment: '商品名称',
             },
+            price: {
+                type: Sequelize.FLOAT,
+                allowNull: false,
+                comment: '商品价格',
+            },
             thumb_url: {
                 type: Sequelize.STRING,
                 comment: '商品链接',
