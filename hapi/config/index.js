@@ -1,9 +1,10 @@
 const { env } = process;
-if (env.NODE_ENV === 'production') {
-    require('env2')('./.env.prod');
-  } else {
-    require('env2')('./.env.dev');
-  }
+if (env.NODE_ENV == 'development') {
+  require('env2')('./.env.dev');
+} else {
+  require('env2')('./.env.prod');
+  
+}
 const config = {
   host: env.HOST,
   port: env.PORT,
