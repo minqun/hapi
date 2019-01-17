@@ -15,7 +15,6 @@ const config = {
     },
 };
 let sequelize;
-
 // 建立连接
 if (config.use_env_variable) {
     sequelize = new Sequelize(process.env[config.use_env_variable], config);
