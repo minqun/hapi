@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "vue": "^2.5.22",
+    "vue-server-renderer": "^2.5.22"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "env2": "^2.2.2"
+  }
+}

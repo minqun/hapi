@@ -17,7 +17,7 @@ module.exports = [
 			},
 			// 定义接口以 tags 属性定义为分组
 			grouping: 'tags',
-			tags: [ { name: 'tests', description: '' } ]
+			tags: [ { name: 'tests', description: 'web' } ]
 		}
 	}
 ];
