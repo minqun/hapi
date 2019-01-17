@@ -5,9 +5,9 @@ const path = require('path');
 const Sequelize = require('sequelize'); // ORM
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
+
 const configs = require(__dirname + '/../config/config.js');
 const db = {};
-
 const config = {
     ...configs[env],
     define: {
@@ -15,16 +15,15 @@ const config = {
     },
 };
 let sequelize;
-console.log(config, 'process');
+
 // 建立连接
 if (config.use_env_variable) {
     sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
     sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
+console.log(sequelize, 'process');
 //指定目录下所有文件名称”的数组对象 : fs.readdirSync
-console.log(__dirname, '__dirname');
 fs
     .readdirSync(__dirname)
     .filter(file => {
@@ -43,5 +42,5 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
+console.log(db.Sequelize, 'process-db');
 module.exports = db;

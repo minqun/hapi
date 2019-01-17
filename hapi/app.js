@@ -1,4 +1,5 @@
 // app.js
+require('env2')(process.env.NODE_ENV == 'production' ? './.env' : './.env.dev');
 const Hapi = require('hapi');
 const config = require('./config');
 const routesHelloHapi = require('./routes/hellow-world');

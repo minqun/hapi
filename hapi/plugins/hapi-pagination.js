@@ -1,7 +1,7 @@
 const hapiPagination = require('hapi-pagination');
 const options = {
     query: {
-        // ... 此处篇幅考虑省略 query 入参配置代码，参看章节  github 案例
+        // ... 此处篇幅考虑省略 query 配置代码，
         page: {
             name: 'page',
             default: 1
@@ -58,7 +58,7 @@ const options = {
             active: false
             // name == default.query.limit.name
         }
-        // ... 此处篇幅考虑省略 meta 的相关配置代码，参看章节  github 案例
+        // ... 省略 meta 的相关配置代码，
     },
     results: {
         name: 'results'
