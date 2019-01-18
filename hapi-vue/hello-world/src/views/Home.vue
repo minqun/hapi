@@ -4,6 +4,7 @@
       alt="Vue logo"
       src="../assets/logo.png"
     >
+    {{$root.dfod}}
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
