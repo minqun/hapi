@@ -9,6 +9,7 @@ const users = require('./routes/users');
 // 引入自定义的 hapi-swagger 插件配置
 const pluginHapiSwagger = require('./plugins/hapi-swagger');
 const pluginHapiPagination = require('./plugins/hapi-pagination');
+const pluginHapiGood = require('./plugins/hapi-good-console');
 const hapiAuthJWT2 = require('hapi-auth-jwt2');
 const pluginHapiAuthJWT2 = require('./plugins/hapi-auth-jwt2');
 const server = new Hapi.Server();
@@ -22,6 +23,7 @@ const init = async () => {
     await server.register([
         // 为系统使用 hapi-swagger
         ...pluginHapiSwagger,
+        pluginHapiGood,
         hapiAuthJWT2,
         pluginHapiPagination,
     ]);
