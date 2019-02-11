@@ -1,4 +1,6 @@
+// 需单独引入
 // config/config.js
+require('env2')('./.env.dev');
 const { env } = process;
 
 module.exports = {

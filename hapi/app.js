@@ -1,8 +1,9 @@
 // app.js
-require('env2')(process.env.NODE_ENV == 'production' ? './.env' : './.env.dev');
+require('env2')(process.env.NODE_ENV == 'production' ? './.env.prod' : './.env.dev');
+// require('env2')('./.env');
 const Hapi = require('hapi');
-const config = require('./config');
 const routesHelloHapi = require('./routes/hellow-world');
+const config = require('./config');
 const shops = require('./routes/shops');
 const orders = require('./routes/orders');
 const users = require('./routes/users');

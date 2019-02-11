@@ -9,10 +9,9 @@
             "request": "launch",
             "name": "Launch Program",
             "env": {
-                "NODE_ENV": "production"
+                "NODE_ENV": "development"
             },
-            "program": "${workspaceFolder}/app.js",
-            
+            "program": "${workspaceFolder}/app.js", 
         }
     ]
 }
