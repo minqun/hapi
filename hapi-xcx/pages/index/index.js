@@ -14,7 +14,7 @@ Page({
   bindViewTap: function() {
     console.log('a')
     wx.request({
-      url: `http://localhost:8000/orders/7/pay`, // 我们的服务端地址
+      url: `http://localhost:8001/orders/7/pay`, // 我们的服务端地址
       method: 'POST',
       header: {
         authorization: this.data.auth,
@@ -82,7 +82,7 @@ Page({
         const code = res.code;
         console.log(code)
         wx.request({
-          url: `http://localhost:8000/users/wxLogin`, // 我们的服务端地址
+          url: `http://localhost:8001/users/wxLogin`, // 我们的服务端地址
           method: 'POST',
           data: {
             code,
