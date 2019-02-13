@@ -1,6 +1,5 @@
 // app.js
 require('env2')(process.env.NODE_ENV == 'production' ? './.env.prod' : './.env.dev');
-// require('env2')('./.env');
 const Hapi = require('hapi');
 const routesHelloHapi = require('./routes/hellow-world');
 const config = require('./config');
@@ -22,14 +21,14 @@ server.connection({
 
 const init = async () => {
     await server.register([
-        // 为系统使用 hapi-swagger
+        // 插件注册
         ...pluginHapiSwagger,
         pluginHapiGood,
         hapiAuthJWT2,
         pluginHapiPagination,
     ]);
     server.route([
-        // 创建一个简单的 hello hapi 接口
+        // 路由
         ...routesHelloHapi,
         ...orders,
         ...shops,

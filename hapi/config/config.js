@@ -1,6 +1,5 @@
-// 需单独引入
-// config/config.js
-require('env2')('./.env.dev');
+// 需要单独引入配置
+require('env2')(process.env.NODE_ENV == 'production' ? './.env.prod' : './.env.dev');
 const { env } = process;
 
 module.exports = {

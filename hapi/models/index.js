@@ -20,7 +20,6 @@ if (config.use_env_variable) {
 } else {
     sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-console.log(sequelize, 'process');
 //指定目录下所有文件名称”的数组对象 : fs.readdirSync
 fs
     .readdirSync(__dirname)
@@ -40,5 +39,4 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-console.log(db.Sequelize, 'process-db');
 module.exports = db;
