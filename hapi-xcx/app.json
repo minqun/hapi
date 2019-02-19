@@ -3,10 +3,12 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "debug": true,
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "点餐小程序",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   }
 }
