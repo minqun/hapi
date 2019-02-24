@@ -12,7 +12,6 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    console.log('a')
     wx.request({
       url: `http://localhost:8001/orders/7/pay`, // 我们的服务端地址
       method: 'POST',

@@ -1,14 +1,23 @@
 {
-  "pages":[
+  "pages": [
+    "pages/userHome/userHome",
+    "pages/home/home",
+    
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "商家将要获取你的位置"
+    }
+  },
   "debug": true,
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundColor": "#f1f1f1",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "点餐小程序",
-    "navigationBarTextStyle":"black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   }
 }

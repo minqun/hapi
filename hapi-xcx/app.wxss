@@ -1,10 +1,6 @@
 /**app.wxss**/
-.container {
+page {
+  background-color: rgb(251,250,248);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  color: rgba(51,51,51);
+}
