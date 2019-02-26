@@ -1,6 +1,8 @@
 {
   "pages": [
+    
     "pages/userHome/userHome",
+    "pages/kitOrder/kitOrder",
     "pages/home/home",
     
     "pages/index/index",
